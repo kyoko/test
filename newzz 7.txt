@@ -1,0 +1,53 @@
+<<div class="sysFuncText footermenu">
+<div class="sysContent">                            
+<div class="footer-menu">
+<ul><a href="#photo1"><li class="fm">PHOTO1</li></a>
+<a href="#photo2"><li class="fm">PHOTO2</li></a>
+<a href="#photo3"><li class="fm">PHOTO3</li></a>
+</ul></div>
+</div>
+</div>
+
+li.fm {
+    float: left;
+    width: 33%;
+    background: white;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 1%;
+    margin-right: 1px;
+}
+.footer-menu {
+    width: 100%;
+    display: block;
+    position: fixed;
+    bottom: 2px;
+    left: 6px;
+    opacity: 1!important;
+}
+.sysFuncText.footermenu {
+    max-width: 100%!important;
+    margin-left: 1%!important;
+}
+@media screen and (max-width:480px){
+.footer-menu {
+    left: 2px;
+}
+li.fm {
+    padding: 5%;
+}
+}
+
+jQuery(function() {
+    var topBtn = jQuery('.footer-menu');
+    topBtn.hide();
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 100) { // 200pxで表示
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+});
+</script>
